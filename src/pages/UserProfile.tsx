@@ -1,11 +1,8 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 // import { Container } from './styles';
-
-type token = {
-  token: string
-}
 
 type User = {
   id: number;
@@ -19,16 +16,16 @@ type User = {
   role: string;
 }
 
-// type User = {
-//   "name": string,
-//   "email": string
-// }
 
 
-const UserProfile: React.FC<token> = ({ token }) => {
+
+const UserProfile: React.FC = () => {
 
   const [profile, setProfile] = useState<User | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const navigate = useNavigate();
+
+  const token = localStorage.getItem('token');
 
   const fetchUser = async () => {
     try {
@@ -50,15 +47,22 @@ const UserProfile: React.FC<token> = ({ token }) => {
 
   useEffect(() => {
     fetchUser()
-  }, [token])
+  },);
+
+
+
+  const handleLogout = () =>{
+    localStorage.clear();
+    navigate("/")
+  }
 
   if (error) return <p>{error}</p>;
   if (!profile) return <p>Loading profile...</p>;
 
   return (
     <div>
-      {/* <pre>{JSON.stringify(UserProfile.name, null, 2)}</pre> */}
       <h1>{profile.name}</h1>
+      <button type= "button"onClick={handleLogout}>Logout</button>
     </div>
   );
 };

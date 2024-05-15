@@ -1,15 +1,18 @@
 import { FormEvent, useState } from "react";
 import  axios  from "axios";
+import { useNavigate } from "react-router-dom";
 
-type token = {
-    setToken: (token: string) => void;
-  }
+// type token = {
+//     setToken: (token: string) => void;
+//   }
 
 
-  const Login: React.FC<token> = ({ setToken }) => {
+  const Login: React.FC = () => {
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('')
     const [error, setError] = useState<string | null>(null);
+
+    const navigate = useNavigate();
 
 
     const handleSubmit = async (event: FormEvent) => {
@@ -26,9 +29,10 @@ type token = {
             }
           });
     
-          setToken(response.data.tokens.access);
-          // console.log(response.data);
+          localStorage.setItem("token",response.data.tokens.access);
+
           setError(null);
+          navigate("/profile")
         } catch (err) {
           setError('Erro ao fazer login, verifique se o usuário e senha estão corretos!');
         }
