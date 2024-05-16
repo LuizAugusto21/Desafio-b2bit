@@ -1,4 +1,4 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import  axios  from "axios";
 import { useNavigate } from "react-router-dom";
 import "./login.css"
@@ -37,6 +37,14 @@ import "./login.css"
           setError('Erro ao fazer login, verifique se o usuário e senha estão corretos!');
         }
       };
+
+
+      useEffect(() => {
+        const token = localStorage.getItem("token");
+        if (token) {
+          navigate("/profile");
+        }
+      }, [navigate]);
 
     return (
       <div className="content">

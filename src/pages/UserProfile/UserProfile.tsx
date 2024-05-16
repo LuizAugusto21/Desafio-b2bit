@@ -46,6 +46,9 @@ const UserProfile: React.FC = () => {
   };
 
   useEffect(() => {
+    if (!token) {
+      navigate('/')
+    }
     fetchUser()
   },);
 
