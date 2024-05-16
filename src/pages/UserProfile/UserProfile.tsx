@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import "./UserProfile.css"
+import styles from './UserProfile.module.css';
 
 type User = {
   id: number;
@@ -64,13 +64,13 @@ const UserProfile: React.FC = () => {
 
   return (
     <div>
-      <div className="header">
+      <div className={styles.header}>
         <button type="button" onClick={handleLogout}>Logout</button>
       </div>
 
-      <div className="content">
-        <div className="container">
-          <div className="container-picture-detail">
+      <div className={styles.content}>
+        <div className={styles.container}>
+          <div className={styles.containerPictureDetail}>
             <p>Profile picture</p>
             {
               profile.avatar == null ?
@@ -84,11 +84,11 @@ const UserProfile: React.FC = () => {
                   width={75} height={75} />
             }
           </div>
-          <div className="container-infoData">
+          <div className={styles.containerInfoData}>
             <label> Your <span>name</span></label>
-            <p className='personal-info'>{profile.name}</p>
+            <p className={styles.personalInfo}>{profile.name}</p>
             <label>Your <span>E-mail</span></label>
-            <p className='personal-info'>{profile.email}</p>
+            <p className={styles.personalInfo}>{profile.email}</p>
           </div>
         </div>
       </div>

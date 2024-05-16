@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+.content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background-color: #FAFAFA;
+}
+
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  box-shadow: 0 0 64px rgba(0, 0, 0, 0.25);
+  border-radius: 18px;
+  background-color: #FFFFFF;
+  height: 534px;
+  width: 438px;
+}
+
+.loginContainer p {
+  color: red;
+  font-family: 'Nunito', sans-serif;
+  width: 200px;
+}
+
+.loginContainerForm {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: 'Nunito', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  gap: 5px;
+}
+
+.loginContainerForm input {
+  background-color: #f1f1f1;
+  height: 50px;
+  width: 385px;
+  border-style: none;
+  border-radius: 9px;
+  padding: 16px 18px;
+  margin-bottom: 27px;
+}
+
+.loginContainerForm button {
+  color: white;
+  background-color: #02274f;
+  width: 385px;
+  height: 54px;
+  border-radius: 9px;
+  font-size: 18px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+}
+
+.loginContainerForm button:hover {
+  cursor: pointer;
+}
