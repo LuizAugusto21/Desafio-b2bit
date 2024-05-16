@@ -1,7 +1,7 @@
 import { FormEvent, useState } from "react";
 import  axios  from "axios";
 import { useNavigate } from "react-router-dom";
-
+import "./login.css"
 // type token = {
 //     setToken: (token: string) => void;
 //   }
@@ -39,16 +39,19 @@ import { useNavigate } from "react-router-dom";
       };
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <label>Email</label>
-                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-                <label>Senha</label>
-                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-                <button type="submit"> Login</button>
+      <div className="content">
+        <div className="login-container">
+            <img src="/B2Bit_Logo.png" alt="" className="login-container-image"/>
+            <form onSubmit={handleSubmit} className="login-container-form">
+                <label>E-mail</label>
+                <input type="email" placeholder="@gmail.com" value={email} onChange={(e) => setEmail(e.target.value)} required />
+                <label>Password</label>
+                <input type="password" placeholder="**************" value={password} onChange={(e) => setPassword(e.target.value)} required />
+                <button type="submit"> Sign in</button>
             </form>
             {error && <p>{error}</p>}
         </div>
+      </div>
     )
 }
 

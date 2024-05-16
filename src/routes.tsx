@@ -1,8 +1,8 @@
 import {Routes, Route} from 'react-router-dom';
 
 import React from 'react';
-import Login from './pages/login';
-import UserProfile from './pages/UserProfile';
+import Login from './pages/Login/login';
+import UserProfile from './pages/UserProfile/UserProfile';
 
 // import { Container } from './styles';
 
