@@ -30,6 +30,13 @@
     width: 438px;
 }
 
+.login-container p{
+  color: red;
+  font-family: 'nunito', sans-serif;
+  width: 200px;
+}
+
+
 .login-container-form {
   display: flex;
   flex-direction: column;

@@ -34,7 +34,7 @@ import "./login.css"
           setError(null);
           navigate("/profile")
         } catch (err) {
-          setError('Erro ao fazer login, verifique se o usuário e senha estão corretos!');
+          setError('Login inválido, verifique se o usuário e senha estão corretos!');
         }
       };
 

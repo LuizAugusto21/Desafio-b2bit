@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-// import { Container } from './styles';
+import "./UserProfile.css"
 
 type User = {
   id: number;
@@ -54,7 +54,7 @@ const UserProfile: React.FC = () => {
 
 
 
-  const handleLogout = () =>{
+  const handleLogout = () => {
     localStorage.clear();
     navigate("/")
   }
@@ -64,8 +64,34 @@ const UserProfile: React.FC = () => {
 
   return (
     <div>
-      <h1>{profile.name}</h1>
-      <button type= "button"onClick={handleLogout}>Logout</button>
+      <div className="header">
+        <button type="button" onClick={handleLogout}>Logout</button>
+      </div>
+
+      <div className="content">
+        <div className="container">
+          <div className="container-picture-detail">
+            <p>Profile picture</p>
+            {
+              profile.avatar == null ?
+                <img
+                  src='/default_avatar_image.jpg'
+                  alt="Foto de perfil"
+                  width={75} height={75} />
+                :
+                <img src={profile.avatar}
+                  alt="Foto de perfil"
+                  width={75} height={75} />
+            }
+          </div>
+          <div className="container-infoData">
+            <label> Your <span>name</span></label>
+            <p className='personal-info'>{profile.name}</p>
+            <label>Your <span>E-mail</span></label>
+            <p className='personal-info'>{profile.email}</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
