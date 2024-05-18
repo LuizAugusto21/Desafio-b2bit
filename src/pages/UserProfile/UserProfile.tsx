@@ -9,11 +9,19 @@ type User = {
   name: string;
   email: string;
   is_active: boolean;
-  avatar: string | null;
+  avatar: Avatar;
   type: string;
   created: string;
   modified: string;
   role: string;
+}
+
+
+type Avatar ={
+  id: number,
+  high: string,
+  medium: string,
+  low: string
 }
 
 
@@ -79,7 +87,7 @@ const UserProfile: React.FC = () => {
                   alt="Foto de perfil"
                   width={75} height={75} />
                 :
-                <img src={profile.avatar}
+                <img src={profile.avatar.low}
                   alt="Foto de perfil"
                   width={75} height={75} />
             }
