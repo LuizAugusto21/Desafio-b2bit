@@ -14,4 +14,4 @@
 
   Caso queira, pode acessar o projeto através do link:
 
-  https://desafio-b2bit-72d97flo7-luizs-projects-a5937763.vercel.app/
+  https://desafio-b2bit-liard.vercel.app/
